@@ -1,7 +1,7 @@
 import connectToDatabase from '@/lib/db';
 import Stock from '@/models/Stock';
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   if (req.method === 'GET') {
     try {
       // Connect to the database
@@ -56,3 +56,7 @@ export default async function handler(req, res) {
     res.status(405).json({ message: 'Only GET requests are allowed' });
   }
 }
+
+
+
+export default handler;

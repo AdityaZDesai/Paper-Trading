@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useState, useEffect } from "react";
 
 
-export default function Home() {
+function Home() {
   const [stocks, setStocks] = useState([]);
 
   useEffect(() => {
@@ -90,3 +90,4 @@ export default function Home() {
 };
 
 
+export default Home;

@@ -2,7 +2,7 @@
 require('dotenv').config()
 
 
-export default function handler(req, res){
+function handler(req, res){
     const {stock} = req.query;
     const finnhub = require('finnhub');
 
@@ -19,3 +19,5 @@ export default function handler(req, res){
       });
 
 }
+
+export default handler;
