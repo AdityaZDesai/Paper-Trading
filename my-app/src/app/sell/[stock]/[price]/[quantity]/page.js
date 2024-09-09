@@ -14,6 +14,7 @@ function SellStock({params}){
         const quantityToSell = Number(sell);
         const struct = { stock, sell: quantityToSell };
         console.log(struct);
+        if (quantityToSell <= quantity && quantityToSell >= 0){
         try {
             const response = await fetch('/api/sellStocks', {
                 method: 'POST',
@@ -33,6 +34,7 @@ function SellStock({params}){
         } catch (error) {
             console.error('Error submitting stock:', error);
         }
+      }
     };
 
 

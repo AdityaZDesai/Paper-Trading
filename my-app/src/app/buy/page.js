@@ -24,7 +24,7 @@ function Buy(){
         e.preventDefault(); // Prevent default form submission
     
         const struct = { stock, price, quantity };
-    
+        if (quantity > 0){
         try {
             const response = await fetch('/api/addStock', {
                 method: 'POST',
@@ -43,8 +43,8 @@ function Buy(){
             }
         } catch (error) {
             console.error('Error submitting stock:', error);
-        }
-    };
+        }}
+          };
 
     useEffect(() => {
         const fetchData = async () => {
