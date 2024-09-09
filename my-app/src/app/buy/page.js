@@ -2,7 +2,7 @@
 import {redirect, useRouter} from 'next/navigation';
 
 import { useState, useEffect, handleSubmit } from "react";
-export default function buy(){
+export default function Buy(){
     const [stock, setStock] = useState("");
     const [price, setPrice] = useState(0);
     const [quantity, setQuantity] = useState(1);

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-export default function sellStock({params}){
+export default function SellStock({params}){
     const [sell, setSell] = useState(0);
     const {stock, price, quantity} = params;
     const router = useRouter();
