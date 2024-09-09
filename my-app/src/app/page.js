@@ -59,27 +59,24 @@ function Home() {
             ) : (
               stocks.map((stock) => (
                 <li key={stock._id} className="py-4">
-                  <button
-                    onClick={() => handleStockClick(stock.symbol, stock.pricePurchased, stock.quantity)}
-                    className="mx-auto w-full bg-white rounded-lg p-2 shadow-md flex flex-col items-center w-full max-w-[500px] text-left hover:bg-gray-100 transition-colors"
-                  >
-                    <div className="flex items-center justify-between w-full mb-2">
-                      <span className="font-semibold">{stock.symbol}</span>
-                    </div>
-                    <div className="flex items-center mb-1">
-                      <span className="mr-2">Price:</span>
-                      <span className="text-green-500">${stock.currentPrice}</span>
-                    </div>
-                    <div className="flex items-center mb-1">
-                      <span className="mr-2">Quantity:</span>
-                      <span>{stock.quantity}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="mr-2">Profit:</span>
-                      <span className="text-green-500">${stock.profit}</span>
-                    </div>
-                  </button>
-                </li>
+  <button
+    onClick={() => handleStockClick(stock.symbol, stock.pricePurchased, stock.quantity)}
+    className="mx-auto bg-white rounded-lg p-3 shadow-md flex items-center justify-between w-full max-w-[500px] text-left hover:bg-gray-100 transition-colors"
+  >
+    <div className="flex items-center">
+      <span className="font-semibold text-xl">{stock.symbol}</span>
+    </div>
+    <div className="text-right">
+      <div className="text-xl font-semibold">{stock.currentPrice} USD</div>
+      <div className={`${stock.profit < 0 ? 'text-red-500' : 'text-green-500'} text-sm`}>
+        {stock.profit < 0 ? `-${Math.abs(stock.profit)} USD` : `+${stock.profit} USD`}
+      </div>
+      <div className="text-xs text-gray-500">
+        ({stock.quantity} units)
+      </div>
+    </div>
+  </button>
+</li>
               ))
             )}
           </ul>
